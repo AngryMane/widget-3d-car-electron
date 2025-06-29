@@ -1,0 +1,6 @@
+[submodule "external/widget-3d-car-unity"]
+	path = external/widget-3d-car-unity
+	url = https://github.com/eclipse-autowrx/widget-3d-car-unity.git
+[submodule "external/kuksa-databroker"]
+	path = external/kuksa-databroker
+	url = https://github.com/eclipse-kuksa/kuksa-databroker.git

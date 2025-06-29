@@ -1,0 +1,54 @@
+{
+  "name": "unity-electron-app",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dist": "electron-builder"
+  },
+  "author": {
+    "name": "Yosuke Nakayama",
+    "email": "yosuke.nakayama.3@global.toyota.co.jp"
+  },
+  "homepage": "https://github.com/AngryMane/widget-3d-car-unity",
+  "keywords": [],
+  "license": "ISC",
+  "description": "",
+  "build": {
+    "appId": "com.yourcompany.unityapp",
+    "productName": "UnityElectronApp",
+    "files": [
+      "Build/**/*",
+      "proto/**/*",
+      "TemplateData/*",
+      "main.js",
+      "package.json",
+      "index.html",
+      "data.js",
+      "FromUnity.js"
+    ],
+    "extraResources": [
+      {
+        "from": "proto/",
+        "to": "proto/",
+        "filter": ["**/*"]
+      }
+    ] ,
+    "linux": {
+      "target": [
+        "deb"
+      ],
+      "category": "Utility"
+    },
+    "deb": {
+      "afterInstall": "build/debian/postinst"
+    }
+  },
+  "devDependencies": {
+    "electron": "^37.1.0",
+    "electron-builder": "^26.0.12"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.13.4"
+  }
+}
