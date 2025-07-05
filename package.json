@@ -17,14 +17,15 @@
   "build": {
     "appId": "com.yourcompany.unityapp",
     "productName": "UnityElectronApp",
+    "asar": false,
     "files": [
       "Build/**/*",
-      "proto/**/*",
       "TemplateData/*",
       "main.js",
       "package.json",
       "index.html",
       "data.js",
+      "preload.js",
       "FromUnity.js"
     ],
     "extraResources": [
@@ -32,6 +33,14 @@
         "from": "proto/",
         "to": "proto/",
         "filter": ["**/*"]
+      },
+      {
+        "from": "Build/",
+        "to": "Build/"
+      },
+      {
+        "from": "TemplateData/",
+        "to": "TemplateData/"
       }
     ] ,
     "linux": {

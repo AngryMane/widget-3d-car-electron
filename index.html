@@ -109,9 +109,8 @@
     // Set the build version and define build paths dynamically
     let versionBuilt = "widget-3d-car-unity";
     var projectName = `${versionBuilt}`
-    //var buildUrl = "Build";
-    var buildUrl = "/home/yosuke/work/git/widget-3d-car-unity/unity-electron-app/Build";
-    var loaderUrl = buildUrl + `/${projectName}.loader.js`;
+    const buildUrl = window.unityConfig.buildUrl;
+    const loaderUrl = window.unityConfig.loaderUrl;
     var config = {
       arguments: [],
       dataUrl: buildUrl + `/${projectName}.data.unityweb`,
@@ -349,7 +348,7 @@
   <script>
     const { ipcRenderer } = window.nodeRequire('electron');
     ipcRenderer.on('send-to-unity', (event, cmd) => {
-      console.log("Sending command to Unity:", cmd);
+      console.log("Sending command to Unity1:", cmd);
       if (window.unityInstance && typeof window.unityInstance.SendMessage === 'function') {
         window.unityInstance.SendMessage('GameObjectName', 'MethodName', cmd);
       } else {
